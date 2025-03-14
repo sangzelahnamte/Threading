@@ -14,6 +14,8 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 
 add_executable(Timers_lesson
   main.cpp
+  test.h test.cpp
+  watcher.h watcher.cpp
 )
 target_link_libraries(Timers_lesson Qt${QT_VERSION_MAJOR}::Core)
 
