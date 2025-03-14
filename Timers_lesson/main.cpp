@@ -1,4 +1,10 @@
 #include <QCoreApplication>
+#include <QTimer>
+
+void call_foo()
+{
+    qInfo() << "Finished";
+}
 
 int main(int argc, char *argv[])
 {
@@ -13,7 +19,10 @@ int main(int argc, char *argv[])
     // which quits the application after 5 seconds.
 
     // If you do not need a running Qt event loop, remove the call
-    // to a.exec() or use the Non-Qt Plain C++ Application template.
+    // to a.exec() or use the Non-Qt Plain C++ Application template
+    qInfo() << "Loading";
+
+    QTimer::singleShot(5000, &call_foo); // will wait 5 second and call the function
 
     return a.exec();
 }
